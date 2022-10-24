@@ -10,9 +10,9 @@ export default component$(() => {
     });
 
     return (
-        <div className="container mx-auto flex items-center justify-center flex-col py-8">
-            <div className="flex justify-between items-center w-full">
-                <h1 className="text-4xl font-bold text-white">
+        <div className="px-4 lg:px-0 w-full lg:w-fit lg:container lg:mx-auto flex items-center justify-center flex-col py-8">
+            <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:items-center w-full">
+                <h1 className="text-center lg:text-left text-8xl lg:text-4xl font-bold text-white">
                     Qwik.js Todo app
                 </h1>
                 <FiltersMenu filterStore={filterStore} client:visible />

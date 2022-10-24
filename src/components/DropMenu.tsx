@@ -12,7 +12,7 @@ export const DropMenu = qwikify$(
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button>
-                        <BsThreeDotsVertical className="text-2xl text-white" />
+                        <BsThreeDotsVertical className="text-6xl lg:text-2xl text-white" />
                     </Menu.Button>
                 </div>
                 <Transition
@@ -24,12 +24,12 @@ export const DropMenu = qwikify$(
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute right-0 w-32 bg-zinc-900 text-white rounded drop-shadow-lg overflow-hidden">
+                    <Menu.Items className="absolute right-0 w-80 flex flex-col gap-4 lg:gap-0 p-4 lg:p-0 lg:w-32 bg-zinc-900 text-white rounded drop-shadow-lg overflow-hidden">
                         <Menu.Item>
                             {({ active }) => (
                                 <button
                                     className={classNames(
-                                        "text-left py-1 px-4 w-full",
+                                        "text-6xl lg:text-base text-left py-1 px-4 w-full",
                                         {
                                             "bg-zinc-800": active,
                                         }
@@ -43,7 +43,7 @@ export const DropMenu = qwikify$(
                             {({ active }) => (
                                 <button
                                     className={classNames(
-                                        "text-left py-1 px-4 w-full",
+                                        "text-6xl lg:text-base text-left py-1 px-4 w-full",
                                         {
                                             "bg-zinc-800": active,
                                         }

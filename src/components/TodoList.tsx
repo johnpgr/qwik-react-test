@@ -45,17 +45,17 @@ export const TodoList = component$(
                     <ul className="grid lg:grid-cols-2 xl:grid-cols-4 gap-4 mt-4">
                         {todos.map((todo) => (
                             <li
-                                className="p-4 rounded bg-zinc-900 drop-shadow-md flex"
+                                className="p-8 lg:p-4 rounded-xl lg:rounded bg-zinc-900 drop-shadow-md flex lg:h-80"
                                 key={todo.id}
                             >
-                                <div className="flex flex-col h-full">
-                                    <span className="text-white font-semibold">
+                                <div className="flex flex-col gap-4 lg:gap-0 h-full">
+                                    <span className="text-6xl lg:text-base text-white font-semibold">
                                         {todo.title}
                                     </span>
-                                    <span className="text-sm text-zinc-400">
+                                    <span className="text-4xl lg:text-sm text-zinc-400">
                                         {todo.description}
                                     </span>
-                                    <span className="mt-auto text-sm text-white">
+                                    <span className="mt-auto text-4xl lg:text-sm text-white">
                                         {new Date(
                                             todo.createdAt
                                         ).toLocaleString()}
@@ -68,9 +68,9 @@ export const TodoList = component$(
                                         store={store}
                                     />
                                     {todo.completed ? (
-                                        <CheckIcon className="text-2xl text-green-500" />
+                                        <CheckIcon className="text-6xl lg:text-2xl text-green-500" />
                                     ) : (
-                                        <CloseIcon className="text-2xl text-red-500" />
+                                        <CloseIcon className="text-6xl lg:text-2xl text-red-500" />
                                     )}
                                 </div>
                             </li>
