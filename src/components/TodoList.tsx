@@ -33,53 +33,51 @@ export const TodoList = component$(
         });
 
         return (
-            <div>
-                <Resource
-                    value={data}
-                    onPending={() => (
-                        <div className="h-[80vh] flex items-center justify-center">
-                            <Spinner className="text-blue-500 text-4xl animate-spin" />
-                        </div>
-                    )}
-                    onRejected={(error) => <div>Error: {error.message}</div>}
-                    onResolved={(todos) => (
-                        <ul className="grid grid-cols-4 gap-4 mt-4">
-                            {todos.map((todo) => (
-                                <li
-                                    className="p-4 rounded bg-zinc-900 drop-shadow-md flex"
-                                    key={todo.id}
-                                >
-                                    <div className="flex flex-col h-full">
-                                        <span className="text-white font-semibold">
-                                            {todo.title}
-                                        </span>
-                                        <span className="text-sm text-zinc-400">
-                                            {todo.description}
-                                        </span>
-                                        <span className="mt-auto text-sm text-white">
-                                            {new Date(
-                                                todo.createdAt
-                                            ).toLocaleString()}
-                                        </span>
-                                    </div>
-                                    <div className="flex flex-col items-center mt-1 justify-between">
-                                        <DropMenu
-                                            client:visible
-                                            id={todo.id}
-                                            store={store}
-                                        />
-                                        {todo.completed ? (
-                                            <CheckIcon className="text-2xl text-green-500" />
-                                        ) : (
-                                            <CloseIcon className="text-2xl text-red-500" />
-                                        )}
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                />
-            </div>
+            <Resource
+                value={data}
+                onPending={() => (
+                    <div className="h-[80vh] flex items-center justify-center">
+                        <Spinner className="text-blue-500 text-4xl animate-spin" />
+                    </div>
+                )}
+                onRejected={(error) => <div>Error: {error.message}</div>}
+                onResolved={(todos) => (
+                    <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                        {todos.map((todo) => (
+                            <li
+                                className="p-4 rounded bg-zinc-900 drop-shadow-md flex"
+                                key={todo.id}
+                            >
+                                <div className="flex flex-col h-full">
+                                    <span className="text-white font-semibold">
+                                        {todo.title}
+                                    </span>
+                                    <span className="text-sm text-zinc-400">
+                                        {todo.description}
+                                    </span>
+                                    <span className="mt-auto text-sm text-white">
+                                        {new Date(
+                                            todo.createdAt
+                                        ).toLocaleString()}
+                                    </span>
+                                </div>
+                                <div className="flex flex-col items-center mt-1 justify-between">
+                                    <DropMenu
+                                        client:visible
+                                        id={todo.id}
+                                        store={store}
+                                    />
+                                    {todo.completed ? (
+                                        <CheckIcon className="text-2xl text-green-500" />
+                                    ) : (
+                                        <CloseIcon className="text-2xl text-red-500" />
+                                    )}
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            />
         );
     }
 );
