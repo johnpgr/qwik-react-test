@@ -1,5 +1,5 @@
 import { component$, useMount$, useStore } from "@builder.io/qwik";
-import { deleteOne, getAll } from "~/lib/todos";
+import { getAll } from "~/lib/todos";
 import { Todo } from "~/types/Todo";
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
