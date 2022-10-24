@@ -42,7 +42,7 @@ export const TodoList = component$(
                 )}
                 onRejected={(error) => <div>Error: {error.message}</div>}
                 onResolved={(todos) => (
-                    <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                    <ul className="grid lg:grid-cols-2 xl:grid-cols-4 gap-4 mt-4">
                         {todos.map((todo) => (
                             <li
                                 className="p-4 rounded bg-zinc-900 drop-shadow-md flex"
