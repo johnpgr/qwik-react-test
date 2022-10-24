@@ -45,7 +45,7 @@ export const FiltersMenu = qwikify$(
                                             }
                                         )}
                                         onClick={async () =>
-                                            setCurrentFilter("completed")
+                                            setCurrentFilter("all")
                                         }
                                     >
                                         All
