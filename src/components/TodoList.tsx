@@ -37,7 +37,7 @@ export const TodoList = component$(
                 value={data}
                 onPending={() => (
                     <div className="h-[80vh] flex items-center justify-center">
-                        <Spinner className="text-blue-500 text-4xl animate-spin" />
+                        <Spinner className="text-blue-500 text-8xl lg:text-4xl animate-spin" />
                     </div>
                 )}
                 onRejected={(error) => <div>Error: {error.message}</div>}
@@ -61,7 +61,7 @@ export const TodoList = component$(
                                         ).toLocaleString()}
                                     </span>
                                 </div>
-                                <div className="flex flex-col items-center mt-1 justify-between">
+                                <div className="ml-auto flex flex-col items-center mt-1 justify-between">
                                     <DropMenu
                                         client:visible
                                         id={todo.id}
