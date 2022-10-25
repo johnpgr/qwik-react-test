@@ -1,6 +1,7 @@
 import { component$, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { FiltersMenu } from "~/components/FiltersMenu";
+import { TodoFormModal } from "~/components/TodoForm";
 import { TodoList } from "~/components/TodoList";
 import { Filters } from "~/types/filters";
 
@@ -15,6 +16,7 @@ export default component$(() => {
                 <h1 className="text-center lg:text-left text-8xl lg:text-4xl font-bold text-white">
                     Qwik.js Todo app
                 </h1>
+                <TodoFormModal client:visible />
                 <FiltersMenu filterStore={filterStore} client:visible />
             </div>
             <TodoList filterStore={filterStore} />
